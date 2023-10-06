@@ -18,6 +18,9 @@
             <input type="text" id="num2" name="num2">
         </form>
         <button onclick="addNumbers()">Add</button>
+        <button onclick="subtractNumbers()">Subtract</button>
+        <button onclick="divideNumbers()">Divide</button>
+        <button onclick="multiplyNumbers()">Multiply</button>
     </div>
     <div>Result :
         <span id="result"></span>
@@ -25,8 +28,8 @@
 </body>
 <script>
     function addNumbers() {
-        let num1 = 2;
-        let num2 = 4;
+        let num1 = document.getElementById("num1").value;;
+        let num2 = document.getElementById("num2").value;;
         fetch(`/calculator/add?num1=${num1}&num2=${num2}`)
             .then(response => response.json())
             .then(data => {
@@ -34,7 +37,36 @@
                     data.result;
             })
     }
-
+    function subtractNumbers() {
+        let num1 = document.getElementById("num1").value;;
+        let num2 = document.getElementById("num2").value;;
+        fetch(`/calculator/subtract?num1=${num1}&num2=${num2}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").innerHTML =
+                    data.result;
+            })
+    }
+    function divideNumbers() {
+        let num1 = document.getElementById("num1").value;;
+        let num2 = document.getElementById("num2").value;;
+        fetch(`/calculator/divide?num1=${num1}&num2=${num2}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").innerHTML =
+                    data.result;
+            })
+    }
+    function multiplyNumbers() {
+        let num1 = document.getElementById("num1").value;;
+        let num2 = document.getElementById("num2").value;;
+        fetch(`/calculator/multiply?num1=${num1}&num2=${num2}`)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").innerHTML =
+                    data.result;
+            })
+    }
 </script>
 
 </html>
