@@ -9,7 +9,7 @@ const add = (req, res) => {
   let number2 = parseInt(req.query.num2);
   if (!isNaN(number1) && !isNaN(number2)) {
     const result = myCalc.add(number1, number2);
-    log.log(myCalc.id, result)
+    log.log(myCalc.id, result);
     res.json({ result });
   }
 };
@@ -19,6 +19,7 @@ const subtract = (req, res) => {
   let number2 = parseInt(req.query.num2);
   if (!isNaN(number1) && !isNaN(number2)) {
     const result = myCalc.subtract(number1, number2);
+    log.log(myCalc.id, result);
     res.json({ result });
   }
 };
@@ -28,6 +29,7 @@ const divide = (req, res) => {
   let number2 = parseInt(req.query.num2);
   if (!isNaN(number1) && !isNaN(number2)) {
     const result = myCalc.divide(number1, number2);
+    log.log(myCalc.id, result);
     res.json({ result });
   }
 };
@@ -37,6 +39,7 @@ const multiply = (req, res) => {
   let number2 = parseInt(req.query.num2);
   if (!isNaN(number1) && !isNaN(number2)) {
     const result = myCalc.multiply(number1, number2);
+    log.log(myCalc.id, result);
     res.json({ result });
   }
 };
