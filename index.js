@@ -4,6 +4,14 @@ const calculatorRoutes =
 require('./Routes/calculatorRoutes');
 const app = express();
 const app2 = express();
+//Import and mapp Swagger
+const swaggerUi = require('swagger-ui-express');
+swaggerDocument = require('./swagger.json');
+app.use(
+'/api-docs',
+swaggerUi.serve,
+swaggerUi.setup(swaggerDocument)
+);
 
 // map the calculator routes to our app
 app.use('/calculator', calculatorRoutes)

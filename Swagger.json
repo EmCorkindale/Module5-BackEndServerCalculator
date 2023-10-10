@@ -1,23 +1,131 @@
 {
     "swagger": "2.0",
     "info": {
-    "version": "1.0.0",
-    "title": "My Calculator",
-    "description": "API for Calculus in the system",
-    "license": {
-    "name": "Emily Corkindale",
-    "url": "nil"
-    }
+        "version": "1.0.0",
+        "title": "My Calculator",
+        "description": "API for Calculus in the system",
+        "license": {
+            "name": "Emily Corkindale",
+            "url": "nil"
+        }
     },
     "host": "localhost:3000",
     "basePath": "/",
     "tags": [
-    {
-    "name": "Calculator",
-    "description": "API for Calculus in the system"
-    }
+        {
+            "name": "Calculator",
+            "description": "API for Calculus in the system"
+        }
     ],
-    "schemes": ["http"],
-    "consumes": ["application/json"],
-    "produces": ["application/json"]
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/calculator/add": {
+            "get": {
+                "tags": [
+                    "Addition Service"
+                ],
+                "summary": "Add 2 numbers",
+                "parameters": [
+                    {
+                        "name": "num1",
+                        "in": "query",
+                        "description": "The First Number"
+                    },
+                    {
+                        "name": "num2",
+                        "in": "query",
+                        "description": "The Second number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to add two numbers together"
+                    }
+                }
+            }
+        },
+        "/calculator/subtract": {
+            "get": {
+                "tags": [
+                    "Subtraction Service"
+                ],
+                "summary": "Subtract a number from another number",
+                "parameters": [
+                    {
+                        "name": "num1",
+                        "in": "query",
+                        "description": "The First Number"
+                    },
+                    {
+                        "name": "num2",
+                        "in": "query",
+                        "description": "The Second number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to subtract a number from another number"
+                    }
+                }
+            }
+        },
+        "/calculator/multiply": {
+            "get": {
+                "tags": [
+                    "Multiplication Service"
+                ],
+                "summary": "Multiply one number by another number",
+                "parameters": [
+                    {
+                        "name": "num1",
+                        "in": "query",
+                        "description": "The First Number"
+                    },
+                    {
+                        "name": "num2",
+                        "in": "query",
+                        "description": "The Second number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to multiply one number by another number."
+                    }
+                }
+            }
+        },
+        "/calculator/divide": {
+            "get": {
+                "tags": [
+                    "Division Service"
+                ],
+                "summary": "Divide one number by another number",
+                "parameters": [
+                    {
+                        "name": "num1",
+                        "in": "query",
+                        "description": "The First Number"
+                    },
+                    {
+                        "name": "num2",
+                        "in": "query",
+                        "description": "The Second number"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "This service allows you to divide one number by another number."
+                    }
+                }
+            }
+        }
     }
+}
